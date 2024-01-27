@@ -62,6 +62,31 @@ for character, count in dict_counter.items():
 
 
 
+# 5 Задача без оцінювання:
+#
+# Ви створюєте список в якому може бути None(а може і не бути)
+# Мета: надрукувати "There is no None" у випадку якщо None не зустрічаеться у списку
+#
+# Умови:
+# По списку ми йдемо циклом
+# Не створювати змінні(крім списку про який сказано вище)
+# використати if 1 раз
+# Не використовувати методи/функції/класи
+
+my_list = ['Alex', 'John', None, 'Bob']
+
+for element in my_list:
+    if element is None:
+        break
+
+else:
+    print('There is no None')
 
 
+# 6 Задача без оцінювання
+# Вирішити задачу 4 без словника за 2 строки:
+# 1 строка це input
+# 2 строка це рішення
 
+dict_input = input("Let's count each character amount: ")
+print([(char, dict_input.count(char)) for char in set(dict_input) if char != ' '])
