@@ -27,7 +27,6 @@ names_list = ['Jack', 'Leon', 'Alice', None, 32, 'Bob']
 for name in names_list:
     if type(name) == str:
         print(name)
-    continue
 print('\n')
 
 
