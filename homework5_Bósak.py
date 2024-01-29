@@ -43,7 +43,7 @@ max_attempts = 3
 attempts_left = max_attempts
 
 while attempts_left > 0:
-    user_input = input('Enter the formula, like 2 * 5 (you have 3 tries): ')
+    user_input = input(f'Enter the formula, like 2 * 5: ')
 
     try:
         params = user_input.split()
@@ -59,8 +59,16 @@ while attempts_left > 0:
             raise WrongOperatorError("Second element should be '*' or '/'")
 
         result = calculation(number1, operator, number2)
-        print(f'Result: {result}')
+
+        formatted_result = "{:.2f}".format(result)
+
+        result = round(result, 2)
+
+        print(f'Result: {formatted_result}')
         attempts_left = max_attempts
+
+        if formatted_result:
+            break
 
     except ValueError:
         print("Enter a valid numeric values")
@@ -76,9 +84,3 @@ while attempts_left > 0:
 
     if attempts_left == 0:
         print("The attempts are over.")
-
-
-
-
-
-
