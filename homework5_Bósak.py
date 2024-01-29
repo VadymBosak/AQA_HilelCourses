@@ -58,6 +58,9 @@ while attempts_left > 0:
         if operator not in {'*', '/'}:
             raise WrongOperatorError("Second element should be '*' or '/'")
 
+        if number2 == 0:
+            raise ZeroDivisionError('Division by 0 is not allowed')
+
         result = calculation(number1, operator, number2)
 
         formatted_result = "{:.2f}".format(result)
@@ -68,6 +71,10 @@ while attempts_left > 0:
 
         if formatted_result:
             break
+
+    except ZeroDivisionError:
+        print("Division by 0 is not allowed")
+        attempts_left -= 1
 
     except ValueError:
         print("Enter a valid numeric values")
