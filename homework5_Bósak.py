@@ -65,7 +65,6 @@ while attempts_left > 0:
         result = round(result, 2)
 
         print(f'Result: {formatted_result}')
-        attempts_left = max_attempts
 
         if formatted_result:
             break
