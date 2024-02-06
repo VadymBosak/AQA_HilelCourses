@@ -19,6 +19,7 @@ def get_sum(num, operation):
         elif operation == '*':
             result = num * i
         results.append(result)
+        print_table(num, operation)
     return results
 
 if __name__ == '__main__':
@@ -26,6 +27,5 @@ if __name__ == '__main__':
         num = int(input("Enter the number: "))
         operation = input("Enter the operation (+ or *): ")
         results = get_sum(num, operation)
-        print_table(num, operation)
     finally:
         print('Program is finished')
