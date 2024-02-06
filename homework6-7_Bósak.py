@@ -14,4 +14,8 @@ def update_salaries(departments):
 update_salaries(data['departments'])
 
 with open('new_costs.json', 'w') as new_file:
-    json.dump(data, new_file, indent=2)
+    json.dump(data, new_file, inde nt=2)
+
+
+
+
