@@ -54,12 +54,13 @@ def check_time(function):
         result = function(*args, **kwargs)
         end_time = time.time()
         execution_time = end_time - start_time
+        print(f"Function execution time is '{function.__name__}': {execution_time} sec")
         return result
     return wrapper
 
 @check_time
 def test_function(n):
    time.sleep(n)
-   return f'Execution time {n} sec'
+   return f'Function is done after {n} sec'
 
 print(test_function(2))
