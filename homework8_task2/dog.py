@@ -10,3 +10,4 @@ class Dog(Canine):  # Наслідування: class Dog -> Canine
 
 
 
+

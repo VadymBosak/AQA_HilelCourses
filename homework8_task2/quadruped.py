@@ -14,3 +14,4 @@ class Quadruped(Animal):  # Наслідування: class Quadruped -> base cl
 
 
 
+
