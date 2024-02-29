@@ -15,3 +15,4 @@ class Animal(ABC):
     def eat(self, food):  # Інкапсуляція: метод для здійснення дії їжі тварини, вбудований у базовий клас
         return f"{self.name} is eating {food}."
 
+

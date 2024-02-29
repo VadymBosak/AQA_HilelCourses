@@ -12,3 +12,4 @@ class Canine(Quadruped):  # Наслідування: class Canine -> Quadruped
         return f"{self.name} ({self.breed}) of size {self.size} is fetching {item}."
 
 
+

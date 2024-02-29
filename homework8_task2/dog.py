@@ -1,4 +1,5 @@
-from canine import Canine
+fro
+m canine import Canine
 
 class Dog(Canine):  # Наслідування: class Dog -> Canine
     def __init__(self, name, breed, size, trained):

@@ -9,3 +9,4 @@ class Lion(Feline):  # Наслідування: class Lion -> Feline
         return super().eat(food)
 
 
+

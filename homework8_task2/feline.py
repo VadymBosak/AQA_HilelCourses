@@ -14,3 +14,4 @@ class Feline(Quadruped):  # Наслідування: class Feline -> Quadruped
         return f"{self.name} ({self.breed}) with {self.color} fur is scratching."
 
 
+
