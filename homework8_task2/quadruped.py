@@ -12,3 +12,5 @@ class Quadruped(Animal):  # Наслідування: class Quadruped -> base cl
     def eat(self, food):  # Інкапсуляція: метод для здійснення дії їжі тварини
         return super().eat(food)
 
+
+
