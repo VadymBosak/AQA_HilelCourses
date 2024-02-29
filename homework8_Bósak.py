@@ -71,3 +71,4 @@ print("Card number:", my_user_account.get_card_number())
 print("CVV:", my_user_account.get_cvv())
 
 # 2) Створити декілька(мінімум 4) класів які пов'язані з собою наслідуванням
+

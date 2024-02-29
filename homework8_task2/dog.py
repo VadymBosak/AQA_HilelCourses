@@ -8,3 +8,4 @@ class Dog(Canine):  # Наслідування: class Dog -> Canine
     def eat(self, food):  # Поліморфізм: перевизначення методу eat у підкласі
         return super().eat(food)
 
+

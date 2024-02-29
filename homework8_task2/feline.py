@@ -13,3 +13,4 @@ class Feline(Quadruped):  # Наслідування: class Feline -> Quadruped
     def scratch(self):  # Інкапсуляція: метод, що викликається лише для класу Feline
         return f"{self.name} ({self.breed}) with {self.color} fur is scratching."
 
+
