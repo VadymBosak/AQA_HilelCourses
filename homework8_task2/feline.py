@@ -17,3 +17,4 @@ class Feline(Quadruped):  # Наслідування: class Feline -> Quadruped
 
 
 
+

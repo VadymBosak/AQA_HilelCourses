@@ -14,3 +14,4 @@ class Canine(Quadruped):  # Наслідування: class Canine -> Quadruped
 
 
 
+
