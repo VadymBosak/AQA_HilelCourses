@@ -10,3 +10,4 @@ class Canine(Quadruped):  # Наслідування: class Canine -> Quadruped
 
     def fetch(self, item):  # Інкапсуляція: метод, що викликається лише для класу Canine
         return f"{self.name} ({self.breed}) of size {self.size} is fetching {item}."
+

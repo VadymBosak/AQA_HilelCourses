@@ -7,3 +7,4 @@ class Lion(Feline):  # Наслідування: class Lion -> Feline
 
     def eat(self, food):  # Поліморфізм: перевизначення методу eat у підкласі
         return super().eat(food)
+
