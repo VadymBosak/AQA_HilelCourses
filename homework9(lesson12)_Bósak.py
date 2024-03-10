@@ -4,10 +4,13 @@ class Wagon:
         self.passengers = []
 
     def add_passenger(self, passenger):
-        if len(self.passengers) < 10:
-            self.passengers.append(passenger)
+        if self.number != 1:
+            if len(self.passengers) < 10:
+                self.passengers.append(passenger)
+            else:
+                print("Вагон переповнений!")
         else:
-            print("Вагон переповнений!")
+            print("Локомотив не приймає пасажирів!")
 
     def __len__(self):
         return len(self.passengers)
@@ -24,7 +27,7 @@ class Train:
         return len(self.wagons) - 1  # кіл-ть вагонів без локомотива
 
     def __str__(self):
-        wagon_list = "-".join([str(wagon.number) for wagon in self.wagons[1:]])
+        wagon_list = "-".join([f"[{wagon.number}]" for wagon in self.wagons[1:]])
         return f"<=[HEAD]-{wagon_list}"
 
 
@@ -38,3 +41,4 @@ print("Кількість вагонів без локомотива:", len(trai
 print("Список вагонів без локомотива:", train)
 for i, wagon in enumerate(train.wagons):
     print(f"Вагон {i + 1}: {wagon.passengers}")
+train.wagons[0].add_passenger("Пасажир1")
