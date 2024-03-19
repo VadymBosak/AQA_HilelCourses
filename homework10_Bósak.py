@@ -70,6 +70,8 @@ class ProxyReaderWriter:
         if self.last_write != row:
             self.writer.write_data(row)
             self.last_write = row
+            # Після запису в файл читаємо файл знову, щоб оновити дані
+            self.read()
 
 
 # Приклад використання класу ProxyReaderWriter
