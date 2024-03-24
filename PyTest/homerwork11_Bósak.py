@@ -22,6 +22,12 @@ def test_drive_negative_miles(new_car):
     new_car.start_engine()
     assert new_car.drive(-50) == "Driving -50 miles."  # Negative miles allowed
 
+def test_multiple_starts_and_stops(new_car):
+    assert new_car.start_engine() == "Engine started."
+    assert new_car.start_engine() == "Engine is already running."
+    assert new_car.stop_engine() == "Engine stopped."
+    assert new_car.stop_engine() == "Engine is already off."
+
 def test_clear_miles(car_with_miles):
     assert car_with_miles.miles_limit == 150  # Check initial miles remaining
     car_with_miles.drive(100)  # Drive more miles
