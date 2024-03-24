@@ -1,5 +1,5 @@
 import pytest
-from car import Car
+from PyTest.car import Car
 
 @pytest.fixture
 def new_car():
