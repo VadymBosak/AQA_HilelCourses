@@ -1,11 +1,38 @@
 import pytest
+from car import Car
 
-def test_start_engine(new_car):
+@pytest.fixture
+def new_car():
+    return Car("Toyota", "Camry", miles_limit=100)
+
+@pytest.fixture
+def car_with_miles():
+    car = Car("Honda", "Accord", miles_limit=200)
+    car.drive(50)  # Drive some miles initially
+    return car
+
+def test_init_with_valid_values(new_car):
+    assert new_car._Car__brand == "Toyota"
+    assert new_car._Car__model == "Camry"
+    assert new_car._Car__miles_limit == 100
+
+def test_init_with_default_miles_limit():
+    car = Car("Honda", "Accord")
+    assert car._Car__miles_limit == 0
+
+def test_start_engine_when_off(new_car):
     assert new_car.start_engine() == "Engine started."
 
-def test_stop_engine(new_car):
+def test_start_engine_when_running(new_car):
+    new_car.start_engine()
+    assert new_car.start_engine() == "Engine is already running."
+
+def test_stop_engine_when_running(new_car):
     new_car.start_engine()
     assert new_car.stop_engine() == "Engine stopped."
+
+def test_stop_engine_when_off(new_car):
+    assert new_car.stop_engine() == "Engine is already off."
 
 def test_drive_within_limit(new_car):
     new_car.start_engine()
@@ -21,12 +48,6 @@ def test_drive_when_off(new_car):
 def test_drive_negative_miles(new_car):
     new_car.start_engine()
     assert new_car.drive(-50) == "Driving -50 miles."  # Negative miles allowed
-
-def test_multiple_starts_and_stops(new_car):
-    assert new_car.start_engine() == "Engine started."
-    assert new_car.start_engine() == "Engine is already running."
-    assert new_car.stop_engine() == "Engine stopped."
-    assert new_car.stop_engine() == "Engine is already off."
 
 def test_clear_miles(car_with_miles):
     assert car_with_miles.miles_limit == 150  # Check initial miles remaining
